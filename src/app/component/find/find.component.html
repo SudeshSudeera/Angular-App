@@ -1,0 +1,30 @@
+<mat-form-field style="width:100%" appearance="outline">
+    <mat-label>Search Here</mat-label>
+    <input matInput placeholder="Ex. Input User ID Here" 
+    [(ngModel)]="userId"
+    (keyup.enter)="findUser()">
+</mat-form-field>
+
+<hr>
+
+<table class="table table hover">
+    <thead>
+        <tr>
+            <th>#ID</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Avatar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="users">
+            <td>{{users.id}}</td>
+            <td>{{users.email}}</td>
+            <td>{{users.first_name}}</td>
+            <td>{{users.last_name}}</td>
+            <td><img [src]="users.avatar"></td>
+        </tr>
+    </tbody>
+</table>
+  

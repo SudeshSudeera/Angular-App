@@ -1,0 +1,31 @@
+<table class="table table hover">
+    <thead>
+        <tr>
+            <th>#ID</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Avatar</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td><img [src]="user.avatar" alt="Avatar"></td>
+            <td><button mat-raised-button color="warn" 
+                (click)="delete(user.id)">
+                <mat-icon>delete</mat-icon>
+                Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="pagination">
+    <button mat-raised-button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }}</span>
+    <button mat-raised-button (click)="onPageChange(currentPage + 1)" [disabled]="users.length < itemsPerPage">Next</button>
+</div>

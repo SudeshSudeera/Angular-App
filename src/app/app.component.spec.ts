@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
@@ -7,6 +7,7 @@ describe('AppComponent', () => {
     imports: [RouterTestingModule],
     declarations: [AppComponent]
   }));
+  
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
